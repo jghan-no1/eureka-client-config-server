@@ -15,7 +15,7 @@ spec:
         app: team6-eureka-client-config-server
     spec:
       containers:
-      - name: team6-eureka-client-account
+      - name: team6-eureka-client-config-server
         image: k8s-vga-worker1:5000/group1-team6-eureka-client-config-server
         imagePullPolicy: IfNotPresent
         ports:
