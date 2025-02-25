@@ -10,17 +10,17 @@ spring:
   cloud:
     config:
       server:
-        native:
-          search-locations:
+        # native:
+        #   search-locations:
           # - "/Users/linalee/jghan/04.0225/msa_day4_step01/configserver/src/main/resources/config"
-          - "classpath:/config"
+          # - "classpath:/config"
           # search-locations: "file:///Users//eazybytes//Documents//config"
-        # git:
-          # uri: "https://github.com/ulmsaga/msa_day4_config.git"
-          # default-label: main
-          # timeout: 5
-          # clone-on-start: true
-          # force-pull: true
+        git:
+          uri: "hhttps://github.com/jghan-no1/eureka-client-config-server.git"
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          force-pull: true
 
 management:
   endpoints:
