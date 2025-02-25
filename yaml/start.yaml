@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: team6-eureka-client-config-server
+  namespace: group1-team6
+spec:
+  # replicas: 1
+  selector:
+    matchLabels:
+      app: team6-eureka-client-config-server
+  template:
+    metadata:
+      labels:
+        app: team6-eureka-client-config-server
+    spec:
+      containers:
+      - name: team6-eureka-client-account
+        image: k8s-vga-worker1:5000/group1-team6-eureka-client-config-server
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9020
+---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: team6-eureka-client-config-server
+#   namespace: group1-team6
+# spec:
+#   selector:
+#     app: team6-eureka-client-config-server
+#   ports:
+#     - protocol: TCP
+#       port: 9010
+#       targetPort: 9010
+#       nodePort: 30615
+#   type: NodePort
