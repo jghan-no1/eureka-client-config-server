@@ -1,9 +1,9 @@
 server:
-  port: 9200
+  port: 9020
 
 spring:
   application:
-    name: "jghan-config-server"
+    name: "config-server-jghan"
   profiles:
     # active: native
     active: git
