@@ -5,8 +5,8 @@ spring:
   application:
     name: "jghan-config-server"
   profiles:
-    active: native
-    # active: git
+    # active: native
+    active: git
   cloud:
     config:
       server:
@@ -16,7 +16,8 @@ spring:
           # - "classpath:/config"
           # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
-          uri: "hhttps://github.com/jghan-no1/eureka-client-config-server.git"
+          uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
+          # uri: "https://github.com/ulmsaga/msa_day4_config.git"
           default-label: main
           timeout: 5
           clone-on-start: true
