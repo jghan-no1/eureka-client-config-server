@@ -30,8 +30,8 @@ spec:
   selector:
     app: team6-eureka-client-config-server
   ports:
-    - protocol: TCP
-      port: 8762
-      targetPort: 8762
-      # nodePort: 30615
+  - protocol: TCP
+    port: 8762
+    targetPort: 8762
+    # nodePort: 30615
   type: ClusterIP
