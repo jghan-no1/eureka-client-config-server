@@ -11,17 +11,17 @@ spring:
   cloud:
     config:
       url: "http://team6-config-server:8762"
-      activate:
-        on-profile: native
+      # activate:
+      #   on-profile: native
       server:
-        native:
-          search-locations:
-          - "classpath:/config"
+        # native:
+        #   search-locations:
+        #   - "classpath:/config"
         git:
           uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
           search-locations:
-          - /config
-          # - src/main/resources/config/
+          # - /config
+          - src/main/resources/config/
           default-label: step4  ## git의 branch 이름
           timeout: 5
           clone-on-start: true
