@@ -1,3 +1,4 @@
+---
 server:
   port: 8762
 
@@ -9,8 +10,13 @@ spring:
     active: git
   cloud:
     config:
-      # url: "http://team6-config-server:8762"
+      url: "http://team6-config-server:8762"
+      activate:
+        on-profile: native
       server:
+        native:
+          search-locations:
+          - "classpath:/config"
         git:
           uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
           search-locations:
@@ -21,17 +27,6 @@ spring:
           clone-on-start: true
           force-pull: true
           fail-fast: true  ## git 얀걀 실패 시 빠르게 예외 발생
-spring:
-  config:
-    activate:
-      on-profile: native
-  cloud:
-    config:
-      server:
-        native:
-          search-locations:
-          - "classpath:/config"
-
 
 management:
   endpoints:
