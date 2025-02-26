@@ -9,16 +9,17 @@ spring:
     active: git
   cloud:
     config:
-      url: "http://team6-eureka-client-config-server:8762"
+      url: "http://team6-config-server:8762"
       server:
-        # native:
-        #   search-locations:
+        native:
+          search-locations:
           # - "/Users/linalee/jghan/04.0225/msa_day4_step01/configserver/src/main/resources/config"
-          # - "classpath:/config"
+          - "classpath:/config"
           # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
-          # uri: "https://github.com/ulmsaga/msa_day4_config.git"
+          search-locations:
+          - /config
           default-label: main
           timeout: 5
           clone-on-start: true
@@ -41,15 +42,3 @@ management:
 
 encrypt:
   key: "45D81EC1EF61DF9AD8D3E5BB397F9"
-
-# eureka:
-#   instance:
-#     # lease-renewal-interval-in-seconds: 10
-#     # lease-expiration-duration-in-seconds: 30
-#     preferIpAddress: true
-#     # hostname: ${HOSTNAME}
-#   client:
-#     fetchRegistry: true
-#     registerWithEureka: true
-#     serviceUrl:
-#       defaultZone: http://team6-eureka-server:8761/eureka/
