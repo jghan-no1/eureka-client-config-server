@@ -11,19 +11,27 @@ spring:
     config:
       url: "http://team6-config-server:8762"
       server:
-        native:
-          search-locations:
-          # - "/Users/linalee/jghan/04.0225/msa_day4_step01/configserver/src/main/resources/config"
-          - "classpath:/config"
-          # search-locations: "file:///Users//eazybytes//Documents//config"
         git:
           uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
           search-locations:
           - /config
-          default-label: main
+          # - src/main/resources/config/
+          default-label: step4  ## git의 branch 이름
           timeout: 5
           clone-on-start: true
           force-pull: true
+          fail-fast: true  ## git 얀걀 실패 시 빠르게 예외 발생
+spring:
+  config:
+    activate:
+      on-profile: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations:
+          - "classpath:/config"
+
 
 management:
   endpoints:
