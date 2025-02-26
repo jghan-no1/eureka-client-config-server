@@ -12,7 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: team6-econfig-server
+        app: team6-config-server
     spec:
       containers:
       - name: team6-config-server

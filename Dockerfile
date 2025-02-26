@@ -3,7 +3,7 @@ FROM eclipse-temurin:21
 # ARG JAVA_OPTS
 # ENV JAVA_OPTS=$JAVA_OPTS
 WORKDIR /app
-COPY target/*.jar client-config-server.jar
+COPY target/*.jar config-server.jar
 # EXPOSE 3000
 # ENTRYPOINT exec java $JAVA_OPTS -jar bootproject.jar
 # For Spring-Boot project, use the entrypoint below to reduce Tomcat startup time.
@@ -17,4 +17,4 @@ COPY target/*.jar client-config-server.jar
 # ENV DB_DRIVER=com.mysql.cj.jdbc.Driver
 
 
-CMD ["java", "-jar", "client-config-server.jar"]
+CMD ["java", "-jar", "config-server.jar"]
