@@ -9,7 +9,7 @@ spring:
     active: git
   cloud:
     config:
-      url: "http://team6-config-server:8762"
+      # url: "http://team6-config-server:8762"
       server:
         git:
           uri: "https://github.com/jghan-no1/eureka-client-config-server.git"
