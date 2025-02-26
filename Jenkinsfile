@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
-        IMAGE_NAME = "group1-team6-econfig-server"
+        IMAGE_NAME = "group1-team6-config-server"
         IMAGE_TAG = "v1.13"
-        CONTAINER_NAME = "team6-econfig-server"
+        CONTAINER_NAME = "team6-config-server"
         NAMESPACE = "group1-team6"
         JAVA_HOME = "/usr/local/java21"
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
