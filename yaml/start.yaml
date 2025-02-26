@@ -19,19 +19,19 @@ spec:
         image: k8s-vga-worker1:5000/group1-team6-eureka-client-config-server
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 9020
+        - containerPort: 8762
 ---
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: team6-eureka-client-config-server
-#   namespace: group1-team6
-# spec:
-#   selector:
-#     app: team6-eureka-client-config-server
-#   ports:
-#     - protocol: TCP
-#       port: 9010
-#       targetPort: 9010
-#       nodePort: 30615
-#   type: NodePort
+apiVersion: v1
+kind: Service
+metadata:
+  name: team6-eureka-client-config-server
+  namespace: group1-team6
+spec:
+  selector:
+    app: team6-eureka-client-config-server
+  ports:
+    - protocol: TCP
+      port: 8762
+      targetPort: 8762
+      # nodePort: 30615
+  type: ClusterIP

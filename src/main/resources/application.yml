@@ -9,7 +9,7 @@ spring:
     active: git
   cloud:
     config:
-      url: "http://team6-configserver:8762"
+      url: "http://team6-eureka-client-config-server:8762"
       server:
         # native:
         #   search-locations:
