@@ -33,5 +33,6 @@ spec:
   - protocol: TCP
     port: 8762
     targetPort: 8762
-    # nodePort: 30615
-  type: ClusterIP
+    nodePort: 30614
+  # type: ClusterIP
+  type: NodePort
