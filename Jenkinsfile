@@ -3,7 +3,7 @@ pipeline {
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
         IMAGE_NAME = "group1-team6-config-server"
-        IMAGE_TAG = "v1.20"
+        IMAGE_TAG = "v1.21"
         CONTAINER_NAME = "team6-config-server"
         GIT_USER = "jghan-no1"
         GIT_REPOSITORY = "${GIT_USER}/eureka-client-config-server"
