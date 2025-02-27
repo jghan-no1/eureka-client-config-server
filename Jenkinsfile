@@ -47,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // sh "kubectl delete -f https://raw.githubusercontent.com/${GIT_REPOSITORY}/refs/heads/${BRANCH}/yaml/start.yaml"
-                    sh "kubectl delete -f yaml/start.yaml || ture"
+                    // sh "kubectl delete -f yaml/start.yaml || ture"
                     sh "kubectl apply -f yaml/start.yaml"
                 }
             }
