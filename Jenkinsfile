@@ -46,7 +46,7 @@ pipeline {
         stage('Delete Deployment and Service') {
             steps {
                 script {
-                    sh "kubectl delete -f yaml/start.yaml || ture"
+                    sh "kubectl delete -f yaml/start.yaml || true"
                 }
             }
         }
