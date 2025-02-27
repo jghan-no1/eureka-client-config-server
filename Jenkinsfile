@@ -3,7 +3,7 @@ pipeline {
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
         IMAGE_NAME = "group1-team6-config-server"
-        IMAGE_TAG = "v1.18"
+        IMAGE_TAG = "v1.19"
         CONTAINER_NAME = "team6-config-server"
         GIT_USER = "jghan-no1"
         GIT_REPOSITORY = "${GIT_USER}/eureka-client-config-server"
@@ -43,11 +43,16 @@ pipeline {
                 }
             }
         }
+        stage('Delete Deployment and Service') {
+            steps {
+                script {
+                    sh "kubectl delete -f yaml/start.yaml || ture"
+                }
+            }
+        }
         stage('Make Deployment and Service') {
             steps {
                 script {
-                    // sh "kubectl delete -f https://raw.githubusercontent.com/${GIT_REPOSITORY}/refs/heads/${BRANCH}/yaml/start.yaml"
-                    // sh "kubectl delete -f yaml/start.yaml || ture"
                     sh "kubectl apply -f yaml/start.yaml"
                 }
             }
