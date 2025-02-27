@@ -4,14 +4,14 @@ server:
 
 spring:
   application:
-    name: "config-server-jghan"
+    name: "config-server"
   profiles:
     # active: native
     active: git
   cloud:
     config:
-      activate:
-        on-profile: native
+      # activate:
+      #   on-profile: native
       server:
         native:
           search-locations: "classpath:/config"
@@ -23,8 +23,8 @@ spring:
           # search-paths: src/main/resources/config
           # default-label: step4  ## git의 branch 이름
           timeout: 5
-          clone-on-start: true
-          force-pull: true
+          # clone-on-start: true
+          # force-pull: true
           # fail-fast: true  ## git 얀걀 실패 시 빠르게 예외 발생
 
 management:
