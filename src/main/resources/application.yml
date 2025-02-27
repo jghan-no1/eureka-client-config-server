@@ -26,6 +26,13 @@ spring:
           # clone-on-start: true
           force-pull: true
           # fail-fast: true  ## git 얀걀 실패 시 빠르게 예외 발생
+    bus:
+      enabled: true
+      rabbit:
+        host: rabbitmq-jghan
+        port: 5672
+        username: admin
+        password: admin
 
 management:
   endpoints:
