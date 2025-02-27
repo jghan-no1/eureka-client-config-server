@@ -3,8 +3,11 @@ pipeline {
     environment {
         REGISTRY = "k8s-vga-worker1:5000"
         IMAGE_NAME = "group1-team6-config-server"
-        IMAGE_TAG = "v1.16"
+        IMAGE_TAG = "v1.17"
         CONTAINER_NAME = "team6-config-server"
+        GIT_USER = "jghan-no1"
+        GIT_REPOSITORY = "${GIT_USER}/eureka-client-config-server"
+        BRANCH = "step4"
         NAMESPACE = "group1-team6"
         JAVA_HOME = "/usr/local/java21"
         PATH = "${JAVA_HOME}/bin:${env.PATH}"
@@ -16,7 +19,7 @@ pipeline {
                 sh 'mvn -version'
                 sh "echo ${IMAGE_NAME} ${IMAGE_TAG}"
                 // Git 저장소에서 소스 코드 체크아웃 (branch 지정 : 본인 repository의 branch 이름으로 설정)
-                git branch: 'step4', url: 'https://github.com/jghan-no1/eureka-client-config-server.git'
+                git branch: "${BRANCH}", url: "https://github.com/${GIT_REPOSITORY}.git"
             }
         }
         stage('Build with Maven') {
@@ -43,6 +46,8 @@ pipeline {
         stage('Make Deployment and Service') {
             steps {
                 script {
+                    // sh "kubectl delete -f https://raw.githubusercontent.com/${GIT_REPOSITORY}/refs/heads/${BRANCH}/yaml/start.yaml"
+                    sh "kubectl delete -f yaml/start.yaml"
                     sh "kubectl apply -f yaml/start.yaml"
                 }
             }
